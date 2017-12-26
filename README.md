@@ -1,5 +1,9 @@
 # Kubernetes The Hard Way
 
+## Forked documentation
+
+This document is a forked version of [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way) by Kelsey Hightower. This version of the document focuses on creating a Kubernetes cluster on standard VM's (vSphere, Openstack, Vagrant) and NOT using any cloud tools/utilities.
+
 This tutorial walks you through setting up Kubernetes the hard way. This guide is not for people looking for a fully automated command to bring up a Kubernetes cluster. If that's you then check out [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine), or the [Getting Started Guides](http://kubernetes.io/docs/getting-started-guides/).
 
 Kubernetes The Hard Way is optimized for learning, which means taking the long route to ensure you understand each task required to bootstrap a Kubernetes cluster.

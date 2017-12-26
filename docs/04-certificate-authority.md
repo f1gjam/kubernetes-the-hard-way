@@ -5,9 +5,7 @@ In this lab you will provision a [PKI Infrastructure](https://en.wikipedia.org/w
 ## Certificate Authority
 
 In this section you will provision a Certificate Authority that can be used to generate additional TLS certificates.
-
 Create the CA configuration file:
-
 ```
 cat > ca-config.json <<EOF
 {
@@ -25,10 +23,8 @@ cat > ca-config.json <<EOF
 }
 EOF
 ```
-
 Create the CA certificate signing request:
-
-```
+```diff
 cat > ca-csr.json <<EOF
 {
   "CN": "Kubernetes",
@@ -38,11 +34,11 @@ cat > ca-csr.json <<EOF
   },
   "names": [
     {
-      "C": "US",
-      "L": "Portland",
-      "O": "Kubernetes",
-      "OU": "CA",
-      "ST": "Oregon"
+    +  "C": "US",
+    +  "L": "Portland",
+    +  "O": "Kubernetes",
+    +  "OU": "CA",
+    +  "ST": "Oregon"
     }
   ]
 }
@@ -50,13 +46,10 @@ EOF
 ```
 
 Generate the CA certificate and private key:
-
 ```
 cfssl gencert -initca ca-csr.json | cfssljson -bare ca
 ```
-
 Results:
-
 ```
 ca-key.pem
 ca.pem
@@ -70,7 +63,7 @@ In this section you will generate client and server certificates for each Kubern
 
 Create the `admin` client certificate signing request:
 
-```
+```diff
 cat > admin-csr.json <<EOF
 {
   "CN": "admin",
@@ -80,11 +73,11 @@ cat > admin-csr.json <<EOF
   },
   "names": [
     {
-      "C": "US",
-      "L": "Portland",
-      "O": "system:masters",
-      "OU": "Kubernetes The Hard Way",
-      "ST": "Oregon"
+    +  "C": "US",
+    +  "L": "Portland",
+    +  "O": "system:masters",
+    +  "OU": "Kubernetes The Hard Way",
+    +  "ST": "Oregon"
     }
   ]
 }
